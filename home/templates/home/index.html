@@ -1,0 +1,15 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<h1 class="text-3xl font-semibold py-5">Messages</h1>
+        {% for message in messages %} 
+        <div class="m-5">
+            <h1><strong>User:</strong> {{message.user}}</h1>
+            <h1><strong>Text:</strong> {{message.text}}</h1>
+            <h1><strong>Date Added:</strong> {{message.date}}</h1>
+        </div>
+        {% endfor %}
+    
+
+{% endblock %}

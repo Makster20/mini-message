@@ -1,0 +1,23 @@
+{% extends 'home/index.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+<h1 class="text-3xl font-semibold inline-block py-5">Add new message</h1>
+
+<form method="POST">
+    {% csrf_token %} 
+    <div class="py-5 mx-auto">
+        <label for="name">Name:</label>
+        {% render_field form.name class='px-4 border-2 rounded-sm border-solid border-slate-400 outline-none' id='name' %}
+    </div>
+
+    <div class="py-5 mx-auto">
+        <label for="message">Message:</label>
+        {% render_field form.message class='px-4 border-2 rounded-sm border-solid border-slate-400 outline-none' id='message' %}
+    </div>
+    <button type="submit" class="block bg-slate-400 font-semibold text-white rounded-md py-2 px-4">Confirm</button>
+</form>
+
+{% endblock %}
